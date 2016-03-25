@@ -9,22 +9,8 @@ module.exports = function(req, res, next) {
 
     var eventType = req.body.event.event_header.event_type;
     var eventId = req.body.event.event_header.event_id;
-    var ticketUrl;
-    var sysId = req.body.event.event_header.sys_id;
+    var sysId = req.body.event.event_body.sys_id;
 
-
-    /*parse the url in the event body
-    //This was used before, but now we get get the sysId automatically
-    if (eventType == "P1 Created") {
-        console.log("P1 Created");
-
-        ticketUrl = req.body.event.event_body.match(/(https:.+support)/gi);
-        sysId = /(sys_id)=(.+)(sysparm)/gi.exec(ticketUrl)[2];
-    } else if (eventType == "Emergency Created") {
-        ticketUrl = req.body.event.event_body.match(/(https:.+&quot)/gi);
-        sysId = /(sys_id)=(.+)(&quot)/gi.exec(ticketUrl)[2];
-    }
-    */
 
     console.log("START OF WATERFALL");
 

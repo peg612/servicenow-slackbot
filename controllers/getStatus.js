@@ -34,6 +34,7 @@ module.exports = function(req, res, next) {
                     slackResponse.text = req.body.text + ' not found!';
                 } else {
                     var ticket = body.records[0];
+
                     slackResponse.text = '*<' + config.serviceNow.taskLink + ticket.sys_id + '|' + ticket.number + '>*:  ' + ticket.short_description + '\n```State: ' + ticket.state + '\nPriority: ' + ticket.priority + '```';
                 }
 
