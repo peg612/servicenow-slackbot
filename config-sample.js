@@ -19,6 +19,7 @@ module.exports = {
     "eventHub": {
         "messageKey": "KEY",
         "url": "https://api.byu.edu/EVENTHUB_URL_HERE",
+        //Make sure that this webhook key is unique to the specific micro-service!
         "apiKey": "KEY",
         "sharedSecret": "SECRET",
         "subscriptions": [{
@@ -30,7 +31,7 @@ module.exports = {
             "entity": "Service Now - Incident",
             "event_type": "P1 Created"
         }],
-        "webhook": "http://your.webhook.here",
+        "webhook": "http://your.webhook.here/endpoint",
         "ticketTypes": [
             "RFC", "INC", "RPR", "PRB", "ENG"
         ]

@@ -200,6 +200,7 @@ function setSubscriptions(callback) {
     }
 }
 
+//This is important. At times other individuals make subscriptions to the eventhub with your key within a dev environement and forget about it. Make sure to remove all other subscriptions
 function removeSubscriptions(data, callback) {
     // Remove all current subscriptions
     calls = 0;
