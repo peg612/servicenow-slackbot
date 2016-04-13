@@ -45,12 +45,13 @@ module.exports = function(req, res, next) {
                         status: 400,
                         message: "An error occurred while retrieving ticket info from Service Now."
                     });
-                } else if (body.records[0].u_symptom_category === "") {
+                } /* else if (body.records[0].u_symptom_category === "") {
+                    console.log("No need to submit to Slack: User created ticket.");
                     return callback({
                         status: 200,
                         message: "No need to submit to Slack: User created ticket."
                     });
-                }
+                } */
                 callback(null, body.records[0]); // pass ticket to next function
             });
         },
